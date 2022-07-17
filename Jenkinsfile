@@ -7,6 +7,7 @@ properties([
     pipelineTriggers([cron('H H(18-23) * * 1')])
 ])
 
+node('linux') {
 
     stage('Checkout') {
         /* Make sure we're always starting with a fresh workspace */
@@ -61,3 +62,4 @@ properties([
             }
         }
     }
+}
